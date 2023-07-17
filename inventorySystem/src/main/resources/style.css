@@ -1,0 +1,19 @@
+#logBtn{
+    -fx-background-color:linear-gradient(to bottom right, #51c0cd,#19aea9);
+    -fx-cursor: hand;
+}
+#logBtn:hover{
+    -fx-background-color: #3a88c2;
+}
+
+#clsBtn{
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+}
+#clsBtn:hover{
+    -fx-background-color:#c4394e;
+}
+
+#left-pane{
+    -fx-background-color: linear-gradient(to bottom right, #1b3090,#19aea9);
+}

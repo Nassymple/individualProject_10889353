@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.chart.AreaChart?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.inventorysystem.dashboardController">
+    <AnchorPane fx:id="main_form" prefHeight="200.0" prefWidth="200.0">
+      <children>
+         <BorderPane layoutX="5.0" prefHeight="600.0" prefWidth="1100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="-5.0" AnchorPane.topAnchor="0.0">
+            <top>
+               <AnchorPane prefHeight="45.0" prefWidth="1067.0" BorderPane.alignment="CENTER">
+                  <children>
+                     <AnchorPane id="top-form" layoutX="-8.0" prefHeight="45.0" prefWidth="1100.0" stylesheets="@../../../dashboard.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-8.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="0.0">
+                        <children>
+                           <Label layoutX="14.0" layoutY="11.0" text="Inventory System">
+                              <font>
+                                 <Font name="Arial Black" size="16.0" />
+                              </font>
+                           </Label>
+                           <Button fx:id="close" layoutX="1044.3999999999992" layoutY="10.600000000000001" mnemonicParsing="false" onAction="#close" styleClass="cls" stylesheets="@../../../dashboard.css" text="close" AnchorPane.rightAnchor="3.6000000000008185" AnchorPane.topAnchor="10.600000000000001">
+                              <font>
+                                 <Font name="Arial" size="12.0" />
+                              </font>
+                           </Button>
+                           <Button fx:id="minimize" layoutX="1006.0" layoutY="11.0" mnemonicParsing="false" onAction="#minimize" styleClass="min" stylesheets="@../../../dashboard.css" text="min">
+                              <font>
+                                 <Font name="Arial" size="12.0" />
+                              </font>
+                           </Button>
+                        </children>
+                     </AnchorPane>
+                  </children>
+               </AnchorPane>
+            </top>
+            <left>
+               <AnchorPane prefHeight="555.0" prefWidth="203.0" BorderPane.alignment="CENTER">
+                  <children>
+                     <AnchorPane id="nav-pane" layoutX="-7.0" layoutY="151.0" prefHeight="555.0" prefWidth="210.0" stylesheets="@../../../dashboard.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-7.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <children>
+                           <Label alignment="CENTER" layoutX="31.0" layoutY="76.0" text="WELCOME" textFill="WHITE">
+                              <font>
+                                 <Font name="Arial Black" size="25.0" />
+                              </font>
+                           </Label>
+                           <Label fx:id="username" layoutX="70.0" layoutY="128.0" text="ADMIN" textFill="#8bf581">
+                              <font>
+                                 <Font name="Arial" size="20.0" />
+                              </font>
+                           </Label>
+                           <Line endX="62.0" layoutX="125.0" layoutY="160.0" startX="-114.0" stroke="#69dcff" />
+                           <Button fx:id="home_btn" layoutX="9.0" layoutY="210.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="35.0" prefWidth="180.0" styleClass="nav-home" stylesheets="@../../../dashboard.css" text="HOME" textFill="WHITE">
+                              <font>
+                                 <Font name="Arial Black" size="15.0" />
+                              </font>
+                           </Button>
+                           <Button fx:id="addProduct_btn" layoutX="9.0" layoutY="249.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="35.0" prefWidth="180.0" styleClass="nav-home" stylesheets="@../../../dashboard.css" text="ADD PRODUCT" textFill="WHITE">
+                              <font>
+                                 <Font name="Arial Black" size="15.0" />
+                              </font>
+                           </Button>
+                           <Button fx:id="orders_btn" layoutX="9.0" layoutY="290.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="35.0" prefWidth="180.0" styleClass="nav-home" stylesheets="@../../../dashboard.css" text="ORDERS" textFill="WHITE">
+                              <font>
+                                 <Font name="Arial Black" size="15.0" />
+                              </font>
+                           </Button>
+                           <Button id="logOut" fx:id="logout" layoutX="51.0" layoutY="516.0" mnemonicParsing="false" onAction="#logout" stylesheets="@../../../dashboard.css" text="Sign Out">
+                              <font>
+                                 <Font name="Arial" size="13.0" />
+                              </font>
+                           </Button>
+                        </children>
+                     </AnchorPane>
+                  </children>
+               </AnchorPane>
+            </left>
+            <center>
+               <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                  <children>
+                     <AnchorPane fx:id="home_form" layoutX="104.0" layoutY="78.0" prefHeight="555.0" prefWidth="897.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <children>
+                           <AnchorPane layoutX="18.0" layoutY="8.0" prefHeight="158.0" prefWidth="862.0" stylesheets="@../../../dashboard.css">
+                              <children>
+                                 <AnchorPane id="top-planes" layoutX="33.0" layoutY="27.0" prefHeight="107.0" prefWidth="200.0" stylesheets="@../../../dashboard.css">
+                                    <children>
+                                       <Label layoutX="14.0" layoutY="66.0" text="Orders Today" textFill="WHITE">
+                                          <font>
+                                             <Font name="Arial Black" size="18.0" />
+                                          </font>
+                                       </Label>
+                                       <Label fx:id="home_numberOder" alignment="CENTER_RIGHT" layoutX="93.0" layoutY="14.0" prefHeight="17.0" prefWidth="93.0" text="0" textFill="WHITE">
+                                          <font>
+                                             <Font size="18.0" />
+                                          </font>
+                                       </Label>
+                                    </children>
+                                 </AnchorPane>
+                                 <AnchorPane id="top-planes" layoutX="331.0" layoutY="27.0" prefHeight="107.0" prefWidth="200.0" stylesheets="@../../../dashboard.css">
+                                    <children>
+                                       <Label layoutX="12.0" layoutY="69.0" text="Total Income" textFill="WHITE">
+                                          <font>
+                                             <Font name="Arial Black" size="18.0" />
+                                          </font>
+                                       </Label>
+                                       <Label fx:id="home_totalIncome" alignment="CENTER_RIGHT" layoutX="91.0" layoutY="17.0" prefHeight="17.0" prefWidth="93.0" text="\$0" textFill="WHITE">
+                                          <font>
+                                             <Font size="18.0" />
+                                          </font>
+                                       </Label>
+                                    </children>
+                                 </AnchorPane>
+                                 <AnchorPane id="top-planes" layoutX="624.0" layoutY="26.0" prefHeight="107.0" prefWidth="200.0" stylesheets="@../../../dashboard.css">
+                                    <children>
+                                       <Label layoutX="13.0" layoutY="72.0" text="Ready Products" textFill="WHITE">
+                                          <font>
+                                             <Font name="Arial Black" size="18.0" />
+                                          </font>
+                                       </Label>
+                                       <Label fx:id="home_availableProducts" alignment="CENTER_RIGHT" layoutX="92.0" layoutY="20.0" prefHeight="17.0" prefWidth="93.0" text="0" textFill="WHITE">
+                                          <font>
+                                             <Font size="18.0" />
+                                          </font>
+                                       </Label>
+                                    </children>
+                                 </AnchorPane>
+                              </children>
+                              <styleClass>
+                                 <String fx:value="white-bg" />
+                                 <String fx:value="shadow" />
+                              </styleClass>
+                           </AnchorPane>
+                           <AnchorPane layoutX="18.0" layoutY="186.0" prefHeight="356.0" prefWidth="862.0" stylesheets="@../../../dashboard.css">
+                              <styleClass>
+                                 <String fx:value="white-bg" />
+                                 <String fx:value="shadow" />
+                              </styleClass>
+                              <children>
+                                 <AnchorPane layoutX="22.0" layoutY="25.0" prefHeight="303.0" prefWidth="441.0" styleClass="mid-planes" stylesheets="@../../../dashboard.css">
+                                    <children>
+                                       <AreaChart fx:id="home_incomeChart" layoutX="-19.0" layoutY="-97.0" prefHeight="303.0" prefWidth="481.0" title="Income Chart" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                         <xAxis>
+                                           <CategoryAxis side="BOTTOM" />
+                                         </xAxis>
+                                         <yAxis>
+                                           <NumberAxis side="LEFT" />
+                                         </yAxis>
+                                       </AreaChart>
+                                    </children>
+                                 </AnchorPane>
+                                 <AnchorPane layoutX="489.0" layoutY="27.0" prefHeight="303.0" prefWidth="345.0" styleClass="mid-planes" stylesheets="@../../../dashboard.css">
+                                    <children>
+                                       <BarChart fx:id="home_orderChart" layoutX="-77.0" layoutY="-79.0" prefHeight="321.0" prefWidth="423.0" title="Order Chart" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                         <xAxis>
+                                           <CategoryAxis side="BOTTOM" />
+                                         </xAxis>
+                                         <yAxis>
+                                           <NumberAxis side="LEFT" />
+                                         </yAxis>
+                                       </BarChart>
+                                    </children>
+                                 </AnchorPane>
+                              </children>
+                           </AnchorPane>
+                        </children>
+                     </AnchorPane>
+                     <AnchorPane fx:id="addProducts_form" layoutX="32.0" layoutY="25.0" prefHeight="555.0" prefWidth="897.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <children>
+                           <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="525.0" prefWidth="279.0" stylesheets="@../../../dashboard.css">
+                              <styleClass>
+                                 <String fx:value="white-bg" />
+                                 <String fx:value="shadow" />
+                              </styleClass>
+                              <children>
+                                 <AnchorPane layoutX="67.0" layoutY="14.0" prefHeight="136.0" prefWidth="146.0" styleClass="mid-planes" stylesheets="@../../../dashboard.css">
+                                    <children>
+                                       <ImageView fx:id="addProducts_imageView" fitHeight="136.0" fitWidth="146.0" pickOnBounds="true" preserveRatio="true" />
+                                       <Button fx:id="addProducts_importBtn" layoutY="111.0" mnemonicParsing="false" onAction="#addProductsImportImage" prefHeight="25.0" prefWidth="146.0" styleClass="import-btn" stylesheets="@../../../dashboard.css" text="Import">
+                                          <font>
+                                             <Font name="Arial" size="14.0" />
+                                          </font>
+                                       </Button>
+                                    </children>
+                                 </AnchorPane>
+                                 <Label layoutX="20.0" layoutY="193.0" text="Product ID:">
+                                    <font>
+                                       <Font name="Arial" size="13.0" />
+                                    </font>
+                                 </Label>
+                                 <TextField fx:id="addProducts_productId" layoutX="97.0" layoutY="189.0" prefHeight="25.0" prefWidth="173.0" />
+                                 <Label layoutX="7.0" layoutY="239.0" text="Product Type:">
+                                    <font>
+                                       <Font name="Arial" size="13.0" />
+                                    </font>
+                                 </Label>
+                                 <ComboBox fx:id="addProducts_productType" layoutX="97.0" layoutY="235.0" onAction="#addProductsListType" onMouseClicked="#addProductsListType" prefHeight="25.0" prefWidth="171.0" promptText="Select" />
+                                 <Label layoutX="45.0" layoutY="276.0" text="Brand:">
+                                    <font>
+                                       <Font name="Arial" size="13.0" />
+                                    </font>
+                                 </Label>
+                                 <TextField fx:id="addProducts_brand" layoutX="96.0" layoutY="271.0" prefHeight="25.0" prefWidth="173.0" />
+                                 <Label layoutX="5.0" layoutY="311.0" text="Product Name:">
+                                    <font>
+                                       <Font name="Arial" size="13.0" />
+                                    </font>
+                                 </Label>
+                                 <TextField fx:id="addProducts_productName" layoutX="96.0" layoutY="307.0" prefHeight="25.0" prefWidth="173.0" />
+                                 <Label layoutX="39.0" layoutY="350.0" text="Status:">
+                                    <font>
+                                       <Font name="Arial" size="13.0" />
+                                    </font>
+                                 </Label>
+                                 <ComboBox fx:id="addProducts_status" layoutX="99.0" layoutY="346.0" onAction="#addProductsListStatus" onMouseClicked="#addProductsListStatus" prefHeight="25.0" prefWidth="171.0" promptText="Select" />
+                                 <Button fx:id="addProducts_addBtn" layoutX="37.0" layoutY="432.0" mnemonicParsing="false" onAction="#addProductsAdd" prefHeight="34.0" prefWidth="66.0" styleClass="btn" stylesheets="@../../../dashboard.css" text="Add">
+                                    <font>
+                                       <Font name="Arial" size="13.0" />
+                                    </font>
+                                 </Button>
+                                 <Button fx:id="addProducts_updateBtn" layoutX="175.0" layoutY="432.0" mnemonicParsing="false" onAction="#addProductsUpdate" prefHeight="34.0" prefWidth="66.0" styleClass="update-btn" stylesheets="@../../../dashboard.css" text="Update">
+                                    <font>
+                                       <Font name="Arial" size="13.0" />
+                                    </font>
+                                 </Button>
+                                 <Button fx:id="addProducts_resetBtn" layoutX="37.0" layoutY="484.0" mnemonicParsing="false" onAction="#addProductReset" prefHeight="34.0" prefWidth="66.0" styleClass="reset-btn" stylesheets="@../../../dashboard.css" text="Reset">
+                                    <font>
+                                       <Font name="Arial" size="13.0" />
+                                    </font>
+                                 </Button>
+                                 <Button fx:id="addProducts_deleteBtn" layoutX="175.0" layoutY="484.0" mnemonicParsing="false" onAction="#addProductsDelete" prefHeight="34.0" prefWidth="66.0" styleClass="del-btn" stylesheets="@../../../dashboard.css" text="Delete">
+                                    <font>
+                                       <Font name="Arial" size="13.0" />
+                                    </font>
+                                 </Button>
+                                 <Label layoutX="47.0" layoutY="392.0" text="Price:">
+                                    <font>
+                                       <Font name="Arial" size="13.0" />
+                                    </font>
+                                 </Label>
+                                 <TextField fx:id="addProducts_price" layoutX="99.0" layoutY="388.0" prefHeight="25.0" prefWidth="173.0" />
+                              </children>
+                           </AnchorPane>
+                           <AnchorPane layoutX="344.0" layoutY="15.0" prefHeight="525.0" prefWidth="521.0" stylesheets="@../../../dashboard.css">
+                              <styleClass>
+                                 <String fx:value="white-bg" />
+                                 <String fx:value="shadow" />
+                              </styleClass>
+                              <children>
+                                 <TableView fx:id="addProducts_tableView" layoutX="12.0" layoutY="61.0" onMouseClicked="#addProductsSelect" prefHeight="452.0" prefWidth="499.0">
+                                   <columns>
+                                     <TableColumn fx:id="addProducts_col_productId" prefWidth="75.0" text="Product ID" />
+                                     <TableColumn fx:id="addProducts_col_type" prefWidth="67.0" text="Type" />
+                                       <TableColumn fx:id="addProducts_col_brand" prefWidth="91.0" text="Brand" />
+                                       <TableColumn fx:id="addProducts_col_productName" prefWidth="108.0" text="Product Name" />
+                                       <TableColumn fx:id="addProducts_col_price" prefWidth="87.0" text="Price" />
+                                       <TableColumn fx:id="addProducts_col_status" prefWidth="73.0" text="Status" />
+                                   </columns>
+                                 </TableView>
+                                 <TextField fx:id="addProducts_search" layoutX="15.0" layoutY="19.0" onAction="#addProductsSearch" prefHeight="25.0" prefWidth="213.0" promptText="Search" styleClass="search-bar" stylesheets="@../../../dashboard.css">
+                                    <font>
+                                       <Font name="Arial" size="12.0" />
+                                    </font>
+                                 </TextField>
+                              </children>
+                           </AnchorPane>
+                        </children>
+                     </AnchorPane>
+                     <AnchorPane fx:id="orders_form" prefHeight="555.0" prefWidth="897.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <children>
+                           <AnchorPane layoutX="33.0" layoutY="11.0" prefHeight="533.0" prefWidth="512.0" stylesheets="@../../../dashboard.css">
+                              <styleClass>
+                                 <String fx:value="shadow" />
+                                 <String fx:value="white-bg" />
+                              </styleClass>
+                              <children>
+                                 <TableView fx:id="orders_tableView" layoutX="8.0" layoutY="13.0" prefHeight="508.0" prefWidth="496.0">
+                                   <columns>
+                                     <TableColumn fx:id="orders_col_type" prefWidth="75.0" text="Type" />
+                                     <TableColumn fx:id="orders_col_brand" prefWidth="91.0" text="Brand" />
+                                       <TableColumn fx:id="orders_col_productName" prefWidth="127.0" text="Product Name" />
+                                       <TableColumn fx:id="orders_col_quantity" prefWidth="85.0" text="Quantity" />
+                                       <TableColumn fx:id="orders_col_price" prefWidth="117.0" text="Price" />
+                                   </columns>
+                                 </TableView>
+                              </children>
+                           </AnchorPane>
+                           <AnchorPane layoutX="575.0" layoutY="11.0" prefHeight="533.0" prefWidth="308.0" stylesheets="@../../../dashboard.css">
+                              <styleClass>
+                                 <String fx:value="shadow" />
+                                 <String fx:value="white-bg" />
+                                 <String fx:value="mid-planes" />
+                              </styleClass>
+                              <children>
+                                 <Label layoutX="42.0" layoutY="52.0" text="Product Type:">
+                                    <font>
+                                       <Font name="Arial" size="14.0" />
+                                    </font>
+                                 </Label>
+                                 <ComboBox fx:id="orders_productType" layoutX="144.0" layoutY="48.0" onAction="#addProductsListType" prefWidth="150.0" promptText="Select" />
+                                 <Label layoutX="42.0" layoutY="86.0" text="Brand Name:">
+                                    <font>
+                                       <Font name="Arial" size="14.0" />
+                                    </font>
+                                 </Label>
+                                 <ComboBox fx:id="orders_brand" layoutX="144.0" layoutY="82.0" prefWidth="150.0" promptText="Select" />
+                                 <Label layoutX="42.0" layoutY="122.0" text="Product Name:">
+                                    <font>
+                                       <Font name="Arial" size="14.0" />
+                                    </font>
+                                 </Label>
+                                 <ComboBox fx:id="orders_productName" layoutX="144.0" layoutY="118.0" prefWidth="150.0" promptText="Select" />
+                                 <Label layoutX="73.0" layoutY="161.0" text="Quantity:">
+                                    <font>
+                                       <Font name="Arial" size="14.0" />
+                                    </font>
+                                 </Label>
+                                 <Spinner fx:id="orders_quantity" layoutX="144.0" layoutY="157.0" prefHeight="25.0" prefWidth="83.0" />
+                                 <Button fx:id="orders_addBtn" layoutX="204.0" layoutY="195.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="82.0" styleClass="btn" stylesheets="@../../../dashboard.css" text="Add" />
+                                 <Label layoutX="88.0" layoutY="268.0" text="Total:">
+                                    <font>
+                                       <Font name="Arial" size="18.0" />
+                                    </font>
+                                 </Label>
+                                 <Label fx:id="orders_total" layoutX="140.0" layoutY="267.0" prefHeight="23.0" prefWidth="141.0" text="\$0.0">
+                                    <font>
+                                       <Font name="Arial Bold" size="20.0" />
+                                    </font>
+                                 </Label>
+                                 <Label layoutX="61.0" layoutY="309.0" text="Amount:">
+                                    <font>
+                                       <Font name="Arial" size="16.0" />
+                                    </font>
+                                 </Label>
+                                 <TextField fx:id="orders_amount" layoutX="125.0" layoutY="307.0" prefHeight="25.0" prefWidth="157.0" styleClass="search-bar" stylesheets="@../../../dashboard.css" />
+                                 <Label layoutX="84.0" layoutY="351.0" text="Balance:">
+                                    <font>
+                                       <Font name="Arial" size="18.0" />
+                                    </font>
+                                 </Label>
+                                 <Label fx:id="orders_balance" layoutX="161.0" layoutY="350.0" prefHeight="23.0" prefWidth="120.0" text="\$0.0">
+                                    <font>
+                                       <Font name="Arial Bold" size="20.0" />
+                                    </font>
+                                 </Label>
+                                 <Button fx:id="orders_payBtn" layoutX="56.0" layoutY="430.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="82.0" styleClass="update-btn" stylesheets="@../../../dashboard.css" text="Pay" />
+                                 <Button id="logOut" fx:id="orders_receiptBtn" layoutX="184.0" layoutY="430.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="82.0" stylesheets="@../../../dashboard.css" text="Receipt" />
+                                 <Button fx:id="orders_resetBtn" layoutX="56.0" layoutY="482.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="82.0" styleClass="reset-btn" stylesheets="@../../../dashboard.css" text="Reset" />
+                              </children>
+                           </AnchorPane>
+                        </children>
+                     </AnchorPane>
+                  </children>
+               </AnchorPane>
+            </center>
+         </BorderPane>
+      </children>
+    </AnchorPane>
+</StackPane>
